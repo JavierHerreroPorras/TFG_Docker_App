@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+    # La definición del servicio webapp-server incluye las siguientes opciones
+    webapp-server:
+      # Define la opciones de configuración que se aplican cuando se crea la imagen de la aplicación. Si queremos utilizar
+      # una imagen del repositorio Docker Hub, se puede utilizar el usuario, repositorio y etiqueta de imagen.
+      build:
+        # Define el contexto de compilación, en este caso es el directorio del proyecto actual.
+        context: .
+        # Especifica el Dockerfile del directorio como el archivo que Compose utilizará para compilar la imagen de la aplicación.
+        dockerfile: Dockerfile
+      # Image y container_name se utilizan para dar nombre a la imagen y al contenedor.
+      image: titoroute-server-img
+      container_name: titoroute-node-express
+      # El primero es un montaje de enlace, que monta el código de la aplicación en el directorio /usrc/src/app del contenedor. Esto facilita el desarrollo,
+      # ya que cualquier cambio que se realice al código se actualiza también en el contenedor.
+      # El segundo es un volumen con nombre. Cuando realicemos npm install en el Dockerfile, se creará un nuevo directorio llamado node_modules
+      # en el que se incluirán los paquetes necesarios para ejecutar la aplicación.
+      volumes:
+       - .:/usr/src/app
+       - /usr/src/app/node_modules
+      # Asigna el puerto 8080 del host al puerto 8080 del contenedor
+      ports:
+        - "8080:8080"
+      depends_on:
+        - mongo
+      # Indica a Compose que deseamos añadir variables de entorno de un archivo llamado .env
+      env_file: .env
+      # Permite añadir los ajustes de conexión de Mongo que se definieron en el archivo .env
+      environment:
+        - MONGO_HOSTNAME=$MONGO_HOSTNAME
+        - MONGO_PORT=$MONGO_PORT
+        - MONGO_DB=$MONGO_DB
+    mongo:
+    # Si no encuentra la imagen de forma local, la baja del repositorio oficial MUY IMPORTANTE
+      image: mongo
+      container_name: titoroute-mongodb
+      ports:
+        - "27017:27017"
