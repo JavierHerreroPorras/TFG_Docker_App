@@ -19,7 +19,7 @@ services:
       # en el que se incluirán los paquetes necesarios para ejecutar la aplicación.
       volumes:
        - .:/usr/src/app
-       - /usr/src/app/node_modules
+       - ./node_modules:/usr/src/app/node_modules
       # Asigna el puerto 8080 del host al puerto 8080 del contenedor
       ports:
         - "8080:8080"

@@ -1,6 +1,3 @@
-
-const mongoose = require('mongoose');
-const express = require('express');
 const app = require('./src/app');
 const PORT = 8080;
 
