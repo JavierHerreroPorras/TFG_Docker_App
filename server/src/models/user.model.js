@@ -20,6 +20,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
         unique: true,
+        index: true,
         lowercase: true,
         // Contamos con una función validate, la cual nos permite comprobar si la cadena es un email, mediante
         // el paquete validator y la función isEmail.
@@ -66,15 +67,17 @@ userSchema.statics.findByCredentials = async (email, password) => {
    // Search for a user by email and password.
    const user = await User.findOne({ email} )
    if (!user) {
-      throw new Error({ error: 'Invalid login credentials' })
+      throw new Error('User not found')
    }
    const isPasswordMatch = await bcrypt.compare(password, user.password)
    if (!isPasswordMatch) {
-      throw new Error({ error: 'Invalid login credentials' })
+      throw new Error('Invalid login credentials')
    }
    return user
 }
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema);
+
+User.createIndexes();
 
 module.exports = User
