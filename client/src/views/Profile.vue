@@ -1,21 +1,21 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="currentUser">
     <header class="jumbotron">
       <h3>
-        <strong>{{currentUser.username}}</strong> Profile
+        <strong>{{currentUser.User.name}}</strong> Profile
       </h3>
     </header>
     <p>
       <strong>Token:</strong>
-      {{currentUser.accessToken.substring(0, 20)}} ... {{currentUser.accessToken.substr(currentUser.accessToken.length - 20)}}
+      {{currentUser.token.substring(0, 20)}} ... {{currentUser.token.substr(currentUser.token.length - 20)}}
     </p>
     <p>
       <strong>Id:</strong>
-      {{currentUser.id}}
+      {{currentUser.User.id}}
     </p>
     <p>
       <strong>Email:</strong>
-      {{currentUser.email}}
+      {{currentUser.User.email}}
     </p>
     <strong>Authorities:</strong>
     <ul>
@@ -30,10 +30,13 @@ export default {
   computed: {
     currentUser() {
       return this.$store.state.auth.user;
-    }
+    },
+    loggedIn() {
+      return this.$store.state.auth.status.loggedIn;
+    }  
   },
   mounted() {
-    if (!this.currentUser) {
+    if (!this.loggedIn) {
       this.$router.push('/login');
     }
   }

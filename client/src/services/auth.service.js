@@ -1,4 +1,5 @@
 import axios from 'axios';
+import authHeader from './auth-header';
 
 const API_URL = 'http://localhost:8080/api/users/';
 
@@ -12,18 +13,26 @@ class AuthService {
         password: user.password
       })
       .then(response => {
-        if (response.data.accessToken) {
+        if (response.data.token) {
           localStorage.setItem('user', JSON.stringify(response.data));
         }
-
         return response.data;
       });
   }
 
   // Logout es el servicio relativo al cierre de sesión, el cual borra el token del local storage.
-  logout() {
+  logout(token) {
+
+    const config = {
+      headers: authHeader()
+    }
+
+    const data = {
+      token: token
+    }
+
     return axios
-      .post(API_URL + 'me/logout', {})
+      .post(API_URL + 'me/logout', data, config)
       .then(localStorage.removeItem('user'));
   }
 
