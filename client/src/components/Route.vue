@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
+  <div id="app" class="m-0">
     <section v-if="errored">
       <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
     </section>
 
-    <section v-else>
+    <section v-else >
       <div v-if="loading">Cargando...</div>
 
       <div v-else v-bind:key="index" v-for="(hotel, index) in info">
@@ -21,11 +21,11 @@
               - Botonos de "ver ruta" y "ver resumen"
       -->
 
-      <div class="card" style="width: 18rem;">
-        <img src="../assets/ruta.jpeg" class="card-img-top rounded" alt="Imagen de la ruta">
+      <div class="card bg-light border-secondary" style="width: 18rem;">
+        <img src="../assets/ruta.jpeg" class="card-img-top rounded img-thumbnail" alt="Imagen de la ruta">
         <div class="card-body px-1 py-2">
-          <p class="card-title h4">Ruta de Cuevas Bajas</p>
-          <p class="card-text small">Los lugares de naturaleza más espectaculares de España, teniendo en cuenta que los alojamientos cerca de rutas senderistas.</p>
+          <a href="#" class="card-title h4 stretched-link">Ruta de Cuevas Bajas</a>
+          <p class="card-text small mt-2">Los lugares de naturaleza más espectaculares de España, teniendo en cuenta que los alojamientos cerca de rutas senderistas.</p>
           
           <div class="row align-items-center">
             <div class="col">
@@ -38,10 +38,10 @@
             </div>
           </div>
 
-        <div class="d-flex justify-content-around my-2">
-          <a href="#" class="btn btn-outline-info btn-sm">Ver resumen</a>
-          <a href="#" class="btn btn-outline-info btn-sm">Ver ruta</a>
-        </div>
+        <!-- <div class="d-flex justify-content-around my-2">
+          <a href="#" class="btn btn-outline-secondary btn-sm">Ver resumen</a>
+          <a href="#" class="btn btn-outline-secondary btn-sm">Ver ruta</a>
+        </div> -->
         </div>
       </div>
 

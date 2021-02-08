@@ -1,6 +1,6 @@
 
 <template>
-  <div id="nav container">
+  <div>
     <div class="row">
       <div class="col-6 my-4 d-flex justify-content-around">
         <router-link to="/">TitoRoute</router-link>
@@ -34,7 +34,7 @@
       
     </div>
     
-    <div class="container">
+    <div>
       <router-view />
     </div>
   </div>
