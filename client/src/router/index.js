@@ -1,20 +1,18 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Hotel from '../views/Hotel.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import('../views/Home.vue')
   },
   {
-    path: '/hotel',
-    name: 'Hotel',
+    path: '/rutas',
+    name: 'Rutas',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: Hotel
+    component: () => import('../views/Routes.vue')
   },
   {
     path: '/login',
@@ -30,6 +28,11 @@ const routes = [
     // lazy-loaded: Solamente se cargan cuando se necesitan, haciendo que la aplicación sea más rápida y ligera, lo que mejora la experiencia de usuario
     component: () => import('../views/Profile.vue')
   },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: () => import('../views/NotFound.vue')
+  }
 ]
 
 const router = createRouter({
@@ -37,8 +40,9 @@ const router = createRouter({
   routes
 })
 
+// En este apartado establecemos las rutas que son públicas (y por tanto un usuario no logueado puede acceder)
 router.beforeEach((to, from, next) => {
-  const publicPages = ['/login', '/register', '/home'];
+  const publicPages = ['/login', '/register', '/',];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('user');
 

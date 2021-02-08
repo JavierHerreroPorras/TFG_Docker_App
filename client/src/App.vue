@@ -1,35 +1,39 @@
 
 <template>
-  <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/hotel">Hoteles</router-link>
-      <div v-if="!currentUser" class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <router-link to="/register" class="nav-link">
-            <font-awesome-icon icon="user-plus" />Sign Up
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/login" class="nav-link">
-            <font-awesome-icon icon="sign-in-alt" />Login
-          </router-link>
-        </li>
+  <div id="nav container">
+    <div class="row">
+      <div class="col-6 my-4 d-flex justify-content-around">
+        <router-link to="/">TitoRoute</router-link>
+        <router-link to="/rutas">Rutas</router-link>
       </div>
+      
+      <div class="col-6 my-4">
+        <div v-if="!currentUser" class="d-flex justify-content-around">
+            <router-link to="/register" class="">
+              <font-awesome-icon icon="user-plus" />Sign Up
+            </router-link>
+            
+            <router-link to="/login" class="">
+              <font-awesome-icon icon="sign-in-alt" />Login
+            </router-link>
 
-      <div v-if="currentUser" class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <router-link to="/profile" class="nav-link">
-            <font-awesome-icon icon="user" />
-            {{ currentUser.username }}
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href @click.prevent="logOut">
-            <font-awesome-icon icon="sign-out-alt" />LogOut
-          </a>
-        </li>
+        </div>
+
+        <div v-if="currentUser" class="d-flex justify-content-around">
+            <router-link to="/profile" class="">
+              <font-awesome-icon icon="user" />
+              {{ currentUser.name}} {{ currentUser.surname }}
+            </router-link>
+
+            <a class="" href @click.prevent="logOut">
+              <font-awesome-icon icon="sign-out-alt" />LogOut
+            </a>
+
+        </div>
       </div>
-
+      
+    </div>
+    
     <div class="container">
       <router-view />
     </div>
@@ -40,7 +44,7 @@
 export default {
   computed: {
     currentUser() {
-      return this.$store.state.auth.user;
+      return this.$store.state.auth.user.User;
     },
   },
   methods: {
