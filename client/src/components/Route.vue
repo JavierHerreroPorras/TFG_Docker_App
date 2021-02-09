@@ -24,7 +24,7 @@
       <div class="card bg-light border-secondary" style="width: 18rem;">
         <img src="../assets/ruta.jpeg" class="card-img-top rounded img-thumbnail" alt="Imagen de la ruta">
         <div class="card-body px-1 py-2">
-          <a href="#" class="card-title h4 stretched-link">Ruta de Cuevas Bajas</a>
+          <a href="#" class="card-title h4 stretched-link">{{title}}</a>
           <p class="card-text small mt-2">Los lugares de naturaleza más espectaculares de España, teniendo en cuenta que los alojamientos cerca de rutas senderistas.</p>
           
           <div class="row align-items-center">
@@ -58,10 +58,14 @@
 <script>
 export default {
   name: 'Route',
+  props: {
+    title: String
+  },
   data () {
     return {
       info: null,
-      errored: false
+      errored: false,
+      loading: false
     }
   },
   mounted () {
