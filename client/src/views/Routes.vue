@@ -2,22 +2,32 @@
   <div class="mx-4">
     <h1>Estas son las rutas que ofrecemos</h1>
 
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-      <div class="col mt-5" v-for="(p,index) in displayed" :key="index">
-        <Route :title="'Ruta ' + p"/>
-      </div>
+    <div v-if="loading">Cargando información...</div>
+    <div v-else>
+      <div class="row row-cols-1 row-cols-md-4">
+        <div class="col mb-4" v-for="(p,index) in displayed" :key="index">
+          <Route 
+            :name="p.name"
+            :description="p.description"
+            :imageURL="p.imageURL"
+            :duration="p.duration"
+            :people="p.people"
+            :price="p.price"
+            />
+        </div>
 
-      
-    </div>
-    <div class="justify-content-center mt-4">
-      <v-pagination
-        v-model="page"
-        :pages="totalPages"
-        :range-size="1"
-        active-color="#DCEDFF"
-        class="d-flex justify-content-center"
-      />	
-    </div>	
+        
+      </div>
+      <div class="justify-content-center mt-4">
+        <v-pagination
+          v-model="page"
+          :pages="totalPages"
+          :range-size="1"
+          active-color="#DCEDFF"
+          class="d-flex justify-content-center"
+        />	
+      </div>
+     </div>	
   </div>
 </template>
 
@@ -40,20 +50,22 @@ export default {
   },
   data() {
     return {
-		  numberRoutes : 21,
+		  numberRoutes : 0,
 			totalPages: 0,
 			perPage: 8,
-			pages: [],		
+      loading: true	
 		}
   },
   methods: {
-    setPages () {
-			//this.totalPages = Math.ceil(this.posts.length / this.perPage);
-      this.totalPages = Math.ceil(this.numberRoutes / this.perPage);
-			//Probar a cambiar esto para hacerlo un poco más limpio
-      for (let index = 1; index <= this.totalPages; index++) {
-				this.pages.push(index);
-			}
+    getRoutes () {
+      // Recoger las rutas de /api/route para guardarlas en el vector correspondiente
+      this.$store.dispatch('route/getRoutes').then(
+        () => {
+          // Calcular el número total de rutas y el número de páginas que necesitaré
+          this.numberRoutes = this.$store.state.route.routes.length;
+          this.totalPages = Math.ceil(this.numberRoutes / this.perPage);
+        }
+      );
 		},
 
     paginate () {
@@ -62,18 +74,22 @@ export default {
 
       if(this.numberRoutes < to){to = this.numberRoutes}
 
-      const length = to - from;
-
-			return Array.from({ length }, (_, i) => from + i)
+			return [from,to];
 		}
   },
   computed: {
 		displayed() {
-			return this.paginate();
+      const [from, to] = this.paginate();
+			return this.$store.state.route.routes.slice(from,to);
 		}
 	},
+  watch: {
+    '$store.state.route.routes': function(){
+      this.loading = false;
+    }
+  },
 	created(){
-		this.setPages();
+		this.getRoutes();
 	},
   
 }

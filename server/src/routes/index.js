@@ -2,6 +2,7 @@ const express = require('express');
 const api = express.Router();
 
 const hotelCtrl = require('../controllers/hotel');
+const routeCtrl = require('../controllers/route');
 const user = require('../models/user.model');
 const auth = require ('../middleware/auth');
 
@@ -71,5 +72,12 @@ api.post('/users/me/logout', auth, async (req, res) => {
       res.status(500).send(error)
    }
 })
+
+// Ruta de tipo GET
+api.get('/route', routeCtrl.getRoutes);
+api.get('/route/:routeId', routeCtrl.getRoute);
+
+//Ruta de tipo POST
+api.post('/route', routeCtrl.saveRoute);
 
 module.exports = api;

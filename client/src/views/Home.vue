@@ -1,37 +1,31 @@
 <template>
   <div class="home">
      <img alt="Vue logo" src="../assets/logo.png">
-    
-      <div class="offset">
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>User ID</th>
-      </tr>
-    </thead>
-    <tbody>
-    <tr v-for="p in displayedPosts" v-bind:key="p">
-      <td>{{p.first}}</td>
-      <td>{{p.last}}</td>
-      <td>{{p.suffix}}</td>
-    </tr>
-    </tbody>
-  </table>
 
-	<div class="justify-content-center">
-		<v-pagination
-			v-model="page"
-			:pages="totalPages"
-			:range-size="1"
-			active-color="#DCEDFF"
-			class="d-flex justify-content-center"
-		/>	
-	</div>	
-  </div>
+      <div class="row row-cols-1 row-cols-md-4">
+        <div class="col mb-4">
+          <div class="card bg-light border-secondary h-100">
+                <img src="../assets/ruta.jpeg" class="card-img-top rounded img-thumbnail" alt="Imagen de la ruta"> 
+                <div class="card-body px-1 py-2">
+                  <a href="#" class="card-title h4 stretched-link">Ruta</a>
+                  <p class="card-text small mt-2 crop-text-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, obcaecati, natus iure velit quasi architecto animi consequatur facilis sint quis laboriosam quod incidunt reprehenderit? Rem ex eaque tempora voluptate velit.
+                  Voluptatibus numquam beatae quae quia quibusdam </p>
+                  <div class="row align-items-center">
+                    <div class="col-7">
+                      <h5><span class="d-block badge bg-info text-white my-2 ml-1">Duración:  días</span></h5>
+                      <h5><span class="d-block badge bg-info text-white my-2 ml-1">Nº personas: </span></h5>
+                    </div>
+                    
+                    <div class="col-5">
+                      <h5><span class="badge bg-info text-white ml-n3">Precio:  €</span></h5>
+                    </div>
+                  </div>
 
-  </div>
+                </div>
+              </div>
+        </div>
+      </div> 
+</div>
 </template>
 
 <script>
@@ -39,11 +33,13 @@
 import VPagination from "vue3-pagination";
 import { ref } from 'vue';
 import "vue3-pagination/dist/vue3-pagination.css";
+import Route from '@/components/Route.vue';
 
 export default {
   name: 'Home',
   components: {
-	  VPagination
+	  VPagination,
+	  Route
   },
   setup() {
     const page = ref(1);
@@ -94,3 +90,13 @@ export default {
 	},
 }
 </script>
+
+<style scoped>
+.crop-text-2 {
+  -webkit-line-clamp: 7;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+</style>
