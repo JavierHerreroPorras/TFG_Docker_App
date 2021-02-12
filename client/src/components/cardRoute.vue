@@ -23,8 +23,10 @@
        <div class="card bg-light border-secondary h-100">
          <img :src=imageURL class="card-img-top rounded img-thumbnail" alt="Imagen de la ruta"> 
          <div class="card-body px-1 py-2">
-          <a href="#" class="card-title h4 stretched-link">{{name}}</a>
-          <p class="card-text small mt-2">{{description}}</p>
+           <router-link :to="{ name: 'Ruta', params: { id: 'item-2' }}" class="card-title h4 stretched-link">
+              {{name}}
+            </router-link>
+          <p class="card-text small mt-2 crop-text">{{description}}</p>
           
           <div class="row align-items-center">
             <div class="col-7">
@@ -56,3 +58,21 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.crop-text {
+  /*Se han utilizado las siguientes propiedades: 
+    - -webkit-line-clamp: permite limitar el contenido a un número de líneas (en nuestro caso 7)
+    - overflow: Permite especificar que el contenido se recorta y no se muestran barras de posición
+    - text-overflow: ellipsis: recorta el contenido. Además, muestra que hay contenido desborado (overflowed)
+      mediante la propiedad ellipsis (...)
+    - display nos permite establecer el comportamiento del elemento cuando se renderiza. Con la propiedad
+      -webkit-box  --> Investigar más
+  */
+  -webkit-line-clamp: 7;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+</style>

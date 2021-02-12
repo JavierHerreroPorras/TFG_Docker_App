@@ -1,12 +1,12 @@
 <template>
-  <div class="mx-4">
+  <div class="mx-4" id="containerRoutes">
     <h1>Estas son las rutas que ofrecemos</h1>
 
     <div v-if="loading">Cargando información...</div>
     <div v-else>
-      <div class="row row-cols-1 row-cols-md-4">
+      <div class="row row-cols-1 row-cols-xl-4 row-cols-lg-3 row-cols-md-2">
         <div class="col mb-4" v-for="(p,index) in displayed" :key="index">
-          <Route 
+          <cardRoute 
             :name="p.name"
             :description="p.description"
             :imageURL="p.imageURL"
@@ -24,6 +24,7 @@
           :pages="totalPages"
           :range-size="1"
           active-color="#DCEDFF"
+          @update:modelValue="updatePagination"
           class="d-flex justify-content-center"
         />	
       </div>
@@ -33,7 +34,7 @@
 
 <script>
 // @ is an alias to /src
-import Route from '@/components/Route.vue'
+import cardRoute from '@/components/cardRoute.vue'
 import { ref } from 'vue';
 import VPagination from "vue3-pagination";
 import "vue3-pagination/dist/vue3-pagination.css";
@@ -41,7 +42,7 @@ import "vue3-pagination/dist/vue3-pagination.css";
 export default {
   name: 'Routes',
   components: {
-    Route,
+    cardRoute,
     VPagination
   },
   setup() {
@@ -75,7 +76,11 @@ export default {
       if(this.numberRoutes < to){to = this.numberRoutes}
 
 			return [from,to];
-		}
+		},
+
+    updatePagination() {
+      document.getElementById("containerRoutes").scrollIntoView();
+    }
   },
   computed: {
 		displayed() {

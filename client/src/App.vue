@@ -44,7 +44,13 @@
 export default {
   computed: {
     currentUser() {
-      return this.$store.state.auth.user.User;
+      if(this.$store.state.auth.status.loggedIn){
+        return this.$store.state.auth.user.User;
+      }
+      else{
+        return false;
+      }
+      
     },
   },
   methods: {

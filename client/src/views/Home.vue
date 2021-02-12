@@ -33,13 +33,11 @@
 import VPagination from "vue3-pagination";
 import { ref } from 'vue';
 import "vue3-pagination/dist/vue3-pagination.css";
-import Route from '@/components/Route.vue';
 
 export default {
   name: 'Home',
   components: {
 	  VPagination,
-	  Route
   },
   setup() {
     const page = ref(1);
