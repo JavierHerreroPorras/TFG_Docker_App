@@ -15,7 +15,26 @@
                     - Link
         </p> -->
 
-        <h2> Aquí irá toda la ruta </h2>
+        <h2 class="text-left ml-5"> Ruta del mediterráneo </h2>
+
+        <div class="tab-menu mx-5 my-5">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <router-link :to="{name: 'detalles'}" class="nav-link" active-class="active">Ruta</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link :to="{name: 'mapa'}" class="nav-link" active-class="active">Mapa</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link :to="{name: 'hoteles'}" class="nav-link" active-class="active">Hoteles</router-link>
+                </li>
+            </ul>
+               
+            <div class="tab-content">
+                <router-view></router-view>
+            </div>
+        </div>
+        <!-- End Tab v1 -->
     </div>
 </template>
 
@@ -27,3 +46,21 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.tab-content {
+    border: 1px solid #dee2e6;
+    border-top-style: none;
+}
+
+.tab-menu .nav-tabs .nav-item > .active  { 
+  color: #fff;
+  background: #85aa41; 
+}
+
+.tab-menu .nav-tabs li:hover { 
+  color: #fff; 
+  background: #85aa418a; 
+}
+
+</style>

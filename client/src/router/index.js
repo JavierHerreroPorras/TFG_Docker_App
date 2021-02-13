@@ -17,7 +17,24 @@ const routes = [
   {
     path: '/rutas/:id',
     name: 'Ruta',
-    component: () => import('../views/Route.vue')
+    component: () => import('../views/Route.vue'),
+    children: [
+      {
+        path: 'detalles',
+        name: 'detalles',
+        component: () => import('../components/RouteDetails.vue'),
+      },
+      {
+        path: 'mapa',
+        name: 'mapa',
+        component: () => import('../components/RouteMap.vue'),
+      },
+      {
+        path: 'hoteles',
+        name: 'hoteles',
+        component: () => import('../components/RouteHotels.vue'),
+      }
+    ]
   },
   {
     path: '/login',
