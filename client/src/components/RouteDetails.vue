@@ -1,22 +1,50 @@
 <template>
 <div>
-    <ul class="timeline-v1">
+    <ul class="timeline-v1 mx-5 my-3">
         <li>
-            <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
+			<div class="timeline-badge primary"><font-awesome-icon icon="dot-circle"/></div>
             <div class="timeline-panel">
                 <div class="timeline-heading">
-                    <p>heading</p>
+                    
+					<!-- Carousel de imagenes https://getbootstrap.com/docs/4.6/components/carousel/-->
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+							<img src="../assets/iglesia1.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/iglesia2.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/iglesia3.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/black.png" class="img-fluid w-100" alt="...">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+									
                 </div>
-                <div class="timeline-body text-justify">
-                    <p>body</p>
+                <div class="timeline-body text-justify-center">
+					
+                    <p class="h4">Día 1: Paseo al río Ganges</p>
+
+					<p class="mt-4">Durante el primer día realizaremos un viaje guiado sobre el río, en el cual podremos realizar una actividad de submarinismo</p>
                 </div>
-                <div class="timeline-footer">
+                <!-- <div class="timeline-footer">
                     <p>footer</p>
-                </div>
+                </div> -->
             </div>
         </li>
         <li class="timeline-inverted">
-            <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
             <div class="timeline-panel">
                 <div class="timeline-heading">
                     <p>heading</p>
@@ -42,6 +70,38 @@ export default {
 </script>
 
 <style scoped>
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+}
+/*.carousel-control-prev-icon,
+.carousel-indicators
+{
+    filter: invert(100%);
+}*/
+/*.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-color: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+	opacity: 1;
+}
+    .carousel-control-prev-icon { 
+        width: 30px;
+        height: 48px;
+		opacity: 1;
+		color: white;
+    }
+    .carousel-control-next-icon { 
+        width: 30px;
+        height: 48px;
+		opacity: 1;
+		color: white;
+    }*/
+
 /*Timeline v1
 ------------------------------------*/
 .timeline-v1 {
@@ -165,10 +225,6 @@ export default {
 
 .timeline-v1 > li > .timeline-panel .timeline-heading {
 	padding: 5px;
-}
-
-.timeline-v1 > li > .timeline-panel .timeline-heading img {
-	width: 100%;
 }
 
 .timeline-v1 .timeline-body {
