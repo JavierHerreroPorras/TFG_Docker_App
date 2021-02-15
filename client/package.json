@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/vue-fontawesome": "^3.0.0-3",
     "@vuelidate/core": "^2.0.0-alpha.9",
@@ -20,6 +21,7 @@
     "vue": "^3.0.0",
     "vue-axios": "^3.2.3",
     "vue-router": "^4.0.0-0",
+    "vue3-google-map": "^0.6.0",
     "vue3-pagination": "^1.0.13",
     "vuex": "^4.0.0-0"
   },

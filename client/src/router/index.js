@@ -18,8 +18,12 @@ const routes = [
     path: '/rutas/:id',
     name: 'Ruta',
     component: () => import('../views/Route.vue'),
+    redirect: {
+      name: 'detalles'
+    },
     children: [
       {
+        alias: '',
         path: 'detalles',
         name: 'detalles',
         component: () => import('../components/RouteDetails.vue'),
@@ -33,6 +37,11 @@ const routes = [
         path: 'hoteles',
         name: 'hoteles',
         component: () => import('../components/RouteHotels.vue'),
+      },
+      {
+        path: 'comentarios',
+        name: 'comentarios',
+        component: () => import('../components/RouteComments.vue'),
       }
     ]
   },

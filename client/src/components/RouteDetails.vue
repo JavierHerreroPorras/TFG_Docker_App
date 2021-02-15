@@ -2,7 +2,11 @@
 <div>
     <ul class="timeline-v1 mx-5 my-3">
         <li>
-			<div class="timeline-badge primary"><font-awesome-icon icon="dot-circle"/></div>
+			<div class="timeline-badge primary"><font-awesome-icon icon="circle"/></div>
+			<route-timeline-element/>
+        </li>
+        <li class="timeline-inverted">
+			<div class="timeline-badge primary"><font-awesome-icon icon="circle"/></div>
             <div class="timeline-panel">
                 <div class="timeline-heading">
                     
@@ -35,26 +39,101 @@
                 </div>
                 <div class="timeline-body text-justify-center">
 					
-                    <p class="h4">Día 1: Paseo al río Ganges</p>
+                    <p class="h4">Día 2: Visita a las cuevas prehistóricas</p>
 
-					<p class="mt-4">Durante el primer día realizaremos un viaje guiado sobre el río, en el cual podremos realizar una actividad de submarinismo</p>
+					<p class="mt-4">Durante el segundo día realizaremos una excursión sobre las míticas cuevas prehistóricas de Málaga, y al finalizar comeremos en el restaurante con vistas al mar.</p>
                 </div>
                 <!-- <div class="timeline-footer">
                     <p>footer</p>
                 </div> -->
             </div>
         </li>
-        <li class="timeline-inverted">
+
+		<li>
+			<div class="timeline-badge primary"><font-awesome-icon icon="circle"/></div>
             <div class="timeline-panel">
                 <div class="timeline-heading">
-                    <p>heading</p>
+                    
+					<!-- Carousel de imagenes https://getbootstrap.com/docs/4.6/components/carousel/-->
+					<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+							<img src="../assets/iglesia1.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/iglesia2.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/iglesia3.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/black.png" class="img-fluid w-100" alt="...">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+									
                 </div>
-                <div class="timeline-body text-justify">
-                    <p>body</p>
+                <div class="timeline-body text-justify-center">
+					
+                    <p class="h4">Día 3: Visita guiada por las Iglesias de Toledo</p>
+
+					<p class="mt-4">Durante el tercer día realizaremos una excursión por las iglesias romanas de Toledo (San Román, Santiago el Mayor, etc) y a continuación visitaremos el parque de los Patos.</p>
                 </div>
-                <div class="timeline-footer">
+                <!-- <div class="timeline-footer">
                     <p>footer</p>
+                </div> -->
+            </div>
+		</li>
+
+		<li class="timeline-inverted">
+			<div class="timeline-badge primary"><font-awesome-icon icon="circle"/></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    
+					<!-- Carousel de imagenes https://getbootstrap.com/docs/4.6/components/carousel/-->
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+							<img src="../assets/iglesia1.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/iglesia2.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/iglesia3.jpeg" class="img-fluid w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../assets/black.png" class="img-fluid w-100" alt="...">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+									
                 </div>
+                <div class="timeline-body text-justify-center">
+					
+                    <p class="h4">Día 4: Senderismo en los Montes de Toledo</p>
+
+					<p class="mt-4">Durante el último día realizaremos una ruta de senderismo por los parajes de los Montes de Toledo, únicos tanto en flora como en fauna, donde podremos ver ejemplares de osos pardos, linces ibéricos, buites alconados, etc</p>
+                </div>
+                <!-- <div class="timeline-footer">
+                    <p>footer</p>
+                </div> -->
             </div>
         </li>
         
@@ -64,8 +143,13 @@
 </template>
 
 <script>
+import RouteTimelineElement from './RouteTimelineElement.vue'
+
 export default {
-    name: 'RouteDetails'
+    name: 'RouteDetails',
+	components: {
+		RouteTimelineElement
+	}
 }
 </script>
 

@@ -20,13 +20,16 @@
         <div class="tab-menu mx-5 my-5">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <router-link :to="{name: 'detalles'}" class="nav-link" active-class="active">Ruta</router-link>
+                    <router-link :to="{name: 'detalles'}" class="nav-link" active-class="active" aria-selected="true">Detalles</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link :to="{name: 'mapa'}" class="nav-link" active-class="active">Mapa</router-link>
+                    <router-link :to="{name: 'mapa'}" class="nav-link" active-class="active" aria-selected="false">Mapa</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link :to="{name: 'hoteles'}" class="nav-link" active-class="active">Hoteles</router-link>
+                    <router-link :to="{name: 'hoteles'}" class="nav-link" active-class="active" aria-selected="false">Hoteles</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link :to="{name: 'comentarios'}" class="nav-link" active-class="active" aria-selected="false">Comentarios de los clientes</router-link>
                 </li>
             </ul>
                

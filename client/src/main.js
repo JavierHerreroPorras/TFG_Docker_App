@@ -13,12 +13,17 @@ import {
   faUser,
   faUserPlus,
   faSignInAlt,
-  faBullseye,
+  faSignOutAlt,
+  faCircle,
   faDotCircle,
+  faStar,
+  faStarHalfAlt
 } from '@fortawesome/free-solid-svg-icons';
 
+import {faStar as faRegularStar} from '@fortawesome/free-regular-svg-icons'
 
-library.add(faHome, faUser, faUserPlus, faSignInAlt, faBullseye,faDotCircle);
+
+library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt, faCircle,faDotCircle, faStar,faStarHalfAlt, faRegularStar);
 
 const app = createApp(App)
 app.use(store).use(router).use(VueAxios, axios)
