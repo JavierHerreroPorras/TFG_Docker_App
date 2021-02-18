@@ -6,6 +6,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
@@ -17,16 +18,18 @@ import {
   faCircle,
   faDotCircle,
   faStar,
-  faStarHalfAlt
+  faStarHalfAlt,
+  faThumbsUp,
+  faThumbsDown,
+  faExclamationTriangle
 } from '@fortawesome/free-solid-svg-icons';
 
 import {faStar as faRegularStar} from '@fortawesome/free-regular-svg-icons'
 
-
-library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt, faCircle,faDotCircle, faStar,faStarHalfAlt, faRegularStar);
+library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt, faCircle,faDotCircle, faStar,faStarHalfAlt, faRegularStar, faThumbsUp, faThumbsDown, faExclamationTriangle);
 
 const app = createApp(App)
-app.use(store).use(router).use(VueAxios, axios)
+app.use(store).use(router).use(VueAxios, axios);
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.mount('#app')
 

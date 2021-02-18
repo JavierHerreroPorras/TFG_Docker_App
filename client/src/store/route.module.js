@@ -4,7 +4,11 @@ import RouteService from '../services/route.service';
 // rutas
 const initialState = { 
     success: false,
-    routes: null  
+    routes: null,
+    startDateRoute: new Date().toLocaleDateString(),
+    adult: 0,
+    children: 0,
+    rooms: 0
 }
 
 export const route = {

@@ -1,140 +1,191 @@
 <template>
 
-    <div class="container">
+     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-5 ">
+                <div class="row row-cols-2">
+                   <div class="col">
+                      <circle-progress-bar value=7.5 titulo="Calidad-precio"/>
+                  </div>
+                   <div class="col">
+                    <circle-progress-bar value=9.5 titulo="Ubicación"/>
+                  </div>
+                  <div class="col">
+                    <circle-progress-bar value=9.2 titulo="Instalaciones"/>
+                  </div>
+                  <div class="col">
+                    <circle-progress-bar value=8.7 titulo="Personal"/>
+                  </div>
+               </div>
                 
             </div>
-            <div id="testimonials-1" class="mt-4 col-md-8 testimonials testimonials-v1">
-                <div class="item">
-                    <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
-                    <div class="testimonial-info">
-                        <img class="rounded-x" src="assets/img/testimonials/img1.jpg" alt="">
-                        <span class="testimonial-author">
-                            Jeremy Asigner 
-                            <div>
-                                <RatingComponent :value=2 :total=5 />
-                            </div>
-                        </span>
-                    </div>
+            <div id="testimonials-1" class="mt-4 col-md-7 testimonials testimonials-v1 scrollDiv border-left border-info border-5">
+                <div>
+                  <div class="item">
+                      <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
+                      <div class="testimonial-info">
+                          <img class="img-thumbnail rounded-circle" src="@/assets/user.png" alt="">
+                          <div class="float-left ml-3">
+                            <span class="testimonial-author">
+                              Jeremy Asigner 
+                              <div class="mt-1">
+                                  <RatingComponent :value=2 :total=5 />
+                              </div>
+                            </span>
+                          </div>
+                          <div class="float-right mr-3">
+                              19/03/2020 17:45 
+                              <div class="container mt-1">
+                                  <div class="row">
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="thumbs-up" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="thumbs-down" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="exclamation-triangle" aria-hidden="true"/>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
                 </div>
+
+                <div>
+                  <div class="item personalizada">
+                      <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
+                      <div class="testimonial-info">
+                          <img class="img-thumbnail rounded-circle" src="@/assets/user.png" alt="">
+                          <div class="float-left ml-3">
+                            <span class="testimonial-author">
+                              Jeremy Asigner 
+                              <div class="mt-1">
+                                  <RatingComponent :value=2 :total=5 />
+                              </div>
+                            </span>
+                          </div>
+                          <div class="float-right mr-3">
+                              19/03/2020 17:45 
+                              <div class="container mt-1">
+                                  <div class="row">
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="thumbs-up" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="thumbs-down" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="exclamation-triangle" aria-hidden="true"/>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+                </div>
+
+              <div>
+                  <div class="item personalizada">
+                      <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
+                      <div class="testimonial-info">
+                          <img class="img-thumbnail rounded-circle" src="@/assets/user.png" alt="">
+                          <div class="float-left ml-3">
+                            <span class="testimonial-author">
+                              Jeremy Asigner 
+                              <div class="mt-1">
+                                  <RatingComponent :value=2 :total=5 />
+                              </div>
+                            </span>
+                          </div>
+                          <div class="float-right mr-3">
+                              19/03/2020 17:45 
+                              <div class="container mt-1">
+                                  <div class="row">
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="thumbs-up" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="thumbs-down" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="exclamation-triangle" aria-hidden="true"/>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="item personalizada">
+                      <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
+                      <div class="testimonial-info">
+                          <img class="img-thumbnail rounded-circle" src="@/assets/user.png" alt="">
+                          <div class="float-left ml-3">
+                            <span class="testimonial-author">
+                              Jeremy Asigner 
+                              <div class="mt-1">
+                                  <RatingComponent :value=2 :total=5 />
+                              </div>
+                            </span>
+                          </div>
+                          <div class="float-right mr-3">
+                              19/03/2020 17:45 
+                              <div class="container mt-1">
+                                  <div class="row">
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="thumbs-up" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="thumbs-down" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col-sm">
+                                      <font-awesome-icon icon="exclamation-triangle" aria-hidden="true"/>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+                </div>
+                
+                
             </div>
         </div>
     </div>
-<!-- 
-    <div class="row">
-        <div class="col-md-6">
-            <div id="testimonials-6" class="carousel slide testimonials testimonials-v1">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
-                        <div class="testimonial-info">
-                            <img src="assets/img/testimonials/user.jpg" alt="">
-                            <span class="testimonial-author">
-                                Jeremy Asigner 
-                                <em>Web Developer, Unify Theme.</em>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
-                        <div class="testimonial-info">
-                            <img src="assets/img/testimonials/img1.jpg" alt="">
-                            <span class="testimonial-author">
-                                User 
-                                <em>Java Developer, Htmlstream</em>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
-                        <div class="testimonial-info">
-                            <img src="assets/img/testimonials/img2.jpg" alt="">
-                            <span class="testimonial-author">
-                                Kate Davenport 
-                                <em>Web Designer, Google Inc.</em>
-                            </span>
-                        </div>                                
-                    </div>
-                </div>
-                
-                <div class="carousel-arrow">
-                    <a class="left carousel-control" href="#testimonials-6" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="right carousel-control" href="#testimonials-6" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </div>
-            </div>                        
-        </div>
-        <div class="col-md-6">
-            <div id="testimonials-7" class="carousel slide testimonials testimonials-v1 testimonials-bg-dark">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
-                        <div class="testimonial-info">
-                            <img class="rounded-x" src="assets/img/testimonials/img1.jpg" alt="">
-                            <span class="testimonial-author">
-                                Jeremy Asigner 
-                                <em>Web Developer, Unify Theme.</em>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
-                        <div class="testimonial-info">
-                            <img class="rounded-x" src="assets/img/testimonials/user.jpg" alt="">
-                            <span class="testimonial-author">
-                                User 
-                                <em>Java Developer, Htmlstream</em>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <p>Crasjusto ducimus qui cupiditate non provident, similique sunt in culpaid est anditiis praesentium praesentium blanditiis praesentium non provident, similique sunt in culpaid est anditiis praesentium praesentium..</p>
-                        <div class="testimonial-info">
-                            <img class="rounded-x" src="assets/img/testimonials/img2.jpg" alt="">
-                            <span class="testimonial-author">
-                                Kate Davenport 
-                                <em>Web Designer, Google Inc.</em>
-                            </span>
-                        </div>                                
-                    </div>
-                </div>
-                
-                <div class="carousel-arrow">
-                    <a class="left carousel-control" href="#testimonials-7" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="right carousel-control" href="#testimonials-7" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </div>
-            </div>                        
-        </div>
-    </div> -->
 </template>
 
 <script>
-import RatingComponent from './RatingComponent'
+import RatingComponent from './RatingComponent';
+import CircleProgressBar from './CircleProgressBar';
+
 export default {
   components: {
-    RatingComponent
+    RatingComponent,
+    CircleProgressBar
   },
   props: {}
 }
 </script>
 
 <style scoped>
-
 /*Bootstrap Testimonials
 ------------------------------------*/
-/* .testimonials-bs {
-  padding: 50px 0;
-  background: url(../img/bg/16.jpg) 50% 0 repeat fixed;  
-} */
+ .personalizada {
+  margin-top: 7rem !important;
+}
 
+.scrollDiv {
+  height: 60vh;
+  overflow-y: scroll
+}
 .testimonials-bs .headline-center-v2 span.author {
   color: #777;
   font-size: 14px;
@@ -143,10 +194,7 @@ export default {
 /*Removes Bootstrap carousel background images*/
 .testimonials-bs .item {
   margin-bottom: 30px;
-}
-
-.testimonials-bs .carousel-arrow {
-  text-align: center;
+  margin-top: 7rem !important;
 }
 
 .testimonials-bs .carousel-control-v2 i {
@@ -155,7 +203,6 @@ export default {
 	height: 30px;
 	padding: 2px;
 	font-size: 22px;
-	display: inline-block;
 	border: 2px solid #888;
 }
 
@@ -185,19 +232,18 @@ export default {
 ------------------------------------*/
 /*Testimonials*/
 .testimonials {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 .testimonials .testimonial-info {
   color: #72c02c;
   font-size: 16px;
   padding: 0 15px;
-  margin-top: 18px;
+  margin-top: 0px;
 }
 
 .testimonials .testimonial-info span {
   top: 3px;
-  position: relative;
 }
 
 .testimonials .testimonial-info em {
@@ -213,46 +259,6 @@ export default {
   padding: 2px;
   margin-right: 15px;
   border: solid 1px #ccc;
-}
-
-.testimonials .testimonial-author {
-  overflow: hidden;
-}
-
-.testimonials .carousel-arrow {
-  top: -65px;
-  position: relative;
-}
-
-.testimonials .carousel-arrow i {
-  color: #777;
-  padding: 2px;
-  min-width: 25px;
-  font-size: 20px;
-  text-align: center; 
-  background: #f5f5f5;
-}
-
-.testimonials .carousel-arrow i:hover {
-  color: #fff;
-  background: #72c02c;
-}
-
-.testimonials .carousel-control {
-  opacity: 1;
-  width: 100%;
-  text-align: right;
-  text-shadow: none;
-  position: absolute;
-  filter: Alpha(opacity = 100); /*For IE*/
-}
-
-.testimonials .carousel-control.left {
-  right: 27px;
-  left: auto;
-}
-.testimonials .carousel-control.right {
-  right: 0px;
 }
 
 /*Testimonials v1*/
@@ -280,11 +286,6 @@ export default {
 .testimonials.testimonials-v2 p {
   padding-bottom: 15px;
 }
-
-.testimonials.testimonials-v2 .carousel-arrow {
-  top: -55px; 
-}
-
 .testimonials.testimonials-v2 .item p:after,
 .testimonials.testimonials-v2 .item p:before {
   left: 8%;
@@ -318,57 +319,6 @@ export default {
   border-right-style: inset; /*FF fixes*/ 
 }
 
-/*Testimonials Backgrounds*/
-.testimonials-bg-dark .item p,
-.testimonials-bg-default .item p {
-  color: #fff;
-  font-weight: 200;
-}
 
-.testimonials-bg-dark .carousel-arrow i,
-.testimonials-bg-default .carousel-arrow i {
-  color: #fff;
-}
-
-/*Testimonials Default*/
-.testimonials-bg-default .item p {
-  background: #72c02c;
-}
-
-.testimonials.testimonials-bg-default .item p:after,
-.testimonials.testimonials-bg-default .item p:after {
-  border-top-color: #72c02c;
-}
-
-.testimonials-bg-default .carousel-arrow i {
-  background: #72c02c;
-}
-
-.testimonials.testimonials-bg-default .carousel-arrow i:hover {
-  background: #5fb611;
-}
-
-/*Testimonials Dark*/
-.testimonials-bg-dark .item p {
-  background: #555;
-}
-
-.testimonials.testimonials-bg-dark .item p:after,
-.testimonials.testimonials-bg-dark .item p:after {
-  border-top-color: #555;
-}
-
-.testimonials-bg-dark .carousel-arrow i {
-  color: #fff;
-  background: #555;
-}
-
-.testimonials.testimonials-bg-dark .carousel-arrow i:hover {
-  background: #333;
-}
-
-.testimonials.testimonials-bg-dark .testimonial-info {
-  color: #555;
-}
 
 </style>
