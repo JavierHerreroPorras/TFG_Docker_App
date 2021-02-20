@@ -40,6 +40,24 @@ export const route = {
     getRoutesFailure(state) {
       state.sucess = false;
       state.routes = null;
-    }
+    },
+    incrementAdult(state){
+      state.adult ++;
+    },
+    decrementAdult(state){
+      state.adult --;
+    },
+    incrementChildren(state){
+      state.children ++;
+    },
+    decrementChildren(state){
+      state.children --;
+    },
+    incrementRooms(state){
+      state.rooms ++;
+    },
+    decrementRooms(state){
+      state.rooms --;
+    },
   }
 };

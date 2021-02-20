@@ -14,10 +14,39 @@
 		<button class="d-none" id="aux"/>
 	</div>
     
+	<div>
+		<button class="btn btn-secondary mr-5" data-toggle="dropdown" id="dropdownCustomizeRouteButton" aria-haspopup="true" aria-expanded="false">
+      		{{$store.state.route.adult}} adultos · {{$store.state.route.children}} niños · {{$store.state.route.rooms}} habitaciones
+    	</button>
+
+		<div class="dropdown-menu" id="dropdownCustomizeRoute" aria-labelledby="dropdownCustomizeRoute">
+			<div class="d-flex align-items-baseline ml-3" id="container">
+				<p>Adultos: </p>
+				<div class="d-flex align-items-baseline ml-3">
+					<button @click.stop.prevent="addAdult" class="btn btn-light btn-sm rounded-circle">+</button>
+					<p class="ml-3">{{$store.state.route.adult}}</p>
+					<button @click.stop.prevent="decrementAdult" class="btn btn-light btn-sm rounded-circle ml-3">-</button>
+				</div>
+			</div>
+			<div class="d-flex align-items-baseline inline ml-3">
+				<p>Niños: </p>
+				<div class="d-flex align-items-baseline ml-3">
+					<button @click.stop.prevent="addChild" class="btn btn-light btn-sm rounded-circle">+</button>
+					<p class="ml-3">{{$store.state.route.children}}</p>
+					<button @click.stop.prevent="decrementChild" class="btn btn-light btn-sm rounded-circle ml-3">-</button>
+				</div>
+			</div>
+			<div class="d-flex align-items-baseline ml-3">
+				<p>Habitaciones: </p>
+				<div class="d-flex align-items-baseline ml-3">
+					<button @click.stop.prevent="addRoom" class="btn btn-light btn-sm rounded-circle">+</button>
+					<p class="ml-3">{{$store.state.route.rooms}}</p>
+					<button @click.stop.prevent="decrementRoom" class="btn btn-light btn-sm rounded-circle ml-3">-</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	
-	<button class="btn btn-secondary mr-5" >
-      {{$store.state.route.adult}} adultos · {{$store.state.route.children}} niños · {{$store.state.route.rooms}} habitaciones
-    </button>
 </div>
 
 </template>
@@ -27,6 +56,8 @@ const $ = require('jquery')
 window.$ = $
 import datepickerFactory from 'jquery-datepicker';
 datepickerFactory($);
+
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'Calendar',
@@ -48,9 +79,19 @@ export default {
 	  this.$store.state.route.adult = this.adultos;
 	  this.$store.state.route.children = this.niños;
 	  this.$store.state.route.rooms = this.habitaciones;
-    this.initDatepicker(); 
+    	this.initDatepicker(); 
   },
   methods: {
+
+	...mapMutations(
+		{addAdult: "route/incrementAdult",
+		decrementAdult: "route/decrementAdult",
+		addChild: "route/incrementChildren",
+		decrementChild: "route/decrementChildren",
+		addRoom: "route/incrementRooms",
+		decrementRoom: "route/decrementRooms"
+		}),
+
 	changeInitialDate(selectedDate) {
 		this.$store.state.route.startDateRoute = selectedDate;
 	},
@@ -88,6 +129,11 @@ export default {
 /**/
 /* defaults */
 /**/
+
+.container {        
+    display: flex;
+    align-items: center;
+}
 
 .ui-icon-circle-triangle-w {
   float: left

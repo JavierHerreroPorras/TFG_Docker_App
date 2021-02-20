@@ -13,7 +13,10 @@ export default {
   name: 'RatingComponent',
   props: {
     value: Number,
-    total: Number
+    total: {
+      type: Number,
+      default: 5
+    }
   },
   data () {
     return {
