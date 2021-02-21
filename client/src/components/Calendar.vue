@@ -1,5 +1,5 @@
 <template>
-<div id="configurationRoute" class="d-flex justify-content-end">
+<div id="configurationRoute" class="d-flex justify-content-end mt-5">
 	<div class="mr-5">
 		<button class="btn btn-secondary" data-toggle="dropdown" id="dropdownCalendarButton" aria-haspopup="true" aria-expanded="false">
 			Inicio de la ruta - {{$store.state.route.startDateRoute}}
